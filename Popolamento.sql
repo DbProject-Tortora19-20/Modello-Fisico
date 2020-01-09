@@ -20,7 +20,7 @@ insert into personale (CodiceP,Nome,Cognome,Data_nascita,CF,Ruolo) values (1,'Ro
 -- ---------------------------------------------------
 -- Inserimento dei 'software' all'interno del database
 -- ---------------------------------------------------
-insert into software (CodiceS,Nome,Tipo,Prezzo,Caratteristica,Licenza,Versione) values (1,'Word','Software applicativo',100,'Elaboratore di testo','Software commerciale','16.10.0');
+insert into software (CodiceS,Nome,Tipo,Prezzo,Caratteristica,Licenza,Versione) values (1,'Word','Software applicativo',100,'Elaboratore di testo','Software commerciale','16.1.0');
 insert into software (CodiceS,Nome,Tipo,Prezzo,Caratteristica,Licenza,Versione) values (2,'Excel','Software applicativo',90,'Elaboratore di fogli elettronici','Shareware','16.10.0');
 insert into software (CodiceS,Nome,Tipo,Prezzo,Caratteristica,Licenza,Versione) values (3,'Hyper','Driver',0,'Driver per monitor','Adware','10.3.0');
 insert into software (CodiceS,Nome,Tipo,Prezzo,Caratteristica,Licenza,Versione) values (4,'Sako','Firmware',0,'Alternativa al BIOS','EULA','9.8.0');
