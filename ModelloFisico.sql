@@ -6,19 +6,20 @@ USE `SoftwareHouse` ;
 CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Cliente` (
   `CodiceC` INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `Indirizzo` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`CodiceC`))
+  PRIMARY KEY (`CodiceC`)
+)
 ENGINE = InnoDB;
 
-/*Creazione tabella Personale*/
-CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Personale` (
-  `CodiceP` INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+/*Creazione tabella Operatore*/
+CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Operatore` (
+  `CodiceO` INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(15) NOT NULL,
   `Cognome` VARCHAR(15) NOT NULL,
   `Data_nascita` DATE NOT NULL,
   `CF` CHAR(16) NOT NULL,
   `Ruolo` VARCHAR(13) NOT NULL,
-  PRIMARY KEY (`CodiceP`),
-  CHECK(Ruolo='Analista' or Ruolo='Progettista' or Ruolo='Sviluppatore')
+  PRIMARY KEY (`CodiceO`),
+  CHECK(Ruolo='Tecnico' or Ruolo='Commerciale')
 )
 ENGINE = InnoDB;
 
@@ -39,20 +40,6 @@ CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Software` (
 
 ENGINE = InnoDB;
 
-/*Creazione tabella Lavora_su*/
-CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Lavora_su` (
-  `Personale_CodiceP` INT(5) UNSIGNED NOT NULL,
-  `Software_CodiceS` INT(5) UNSIGNED NOT NULL,
-  PRIMARY KEY (`Personale_CodiceP`, `Software_CodiceS`),
-    FOREIGN KEY (`Personale_CodiceP`)
-    REFERENCES `SoftwareHouse`.`Personale` (`CodiceP`)
-    ON DELETE CASCADE,
-    FOREIGN KEY (`Software_CodiceS`)
-    REFERENCES `SoftwareHouse`.`Software` (`CodiceS`)
-    ON DELETE CASCADE
-)
-ENGINE = InnoDB;
-
 /*Creazione tabella Sistema_Operativo*/
 CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Sistema_Operativo` (
   `Sistema` VARCHAR(20) NOT NULL,
@@ -68,11 +55,16 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Problema` (
   `Descrizione` TINYTEXT NOT NULL,
   `Numero` INT(5) NOT NULL AUTO_INCREMENT,
+  `Stato` BOOLEAN NOT NULL,
   `Software_CodiceS` INT(5) UNSIGNED NOT NULL,
   `Cliente_CodiceC` INT(5) UNSIGNED NOT NULL,
+  `Operatore_CodiceO` INT(5) UNSIGNED NOT NULL,
   PRIMARY KEY (`Numero`, `Software_CodiceS`),
     FOREIGN KEY (`Software_CodiceS`)
     REFERENCES `SoftwareHouse`.`Software` (`CodiceS`)
+    ON DELETE CASCADE,
+	FOREIGN KEY (`Operatore_CodiceO`)
+    REFERENCES `SoftwareHouse`.`Operatore` (`CodiceO`)
     ON DELETE CASCADE,
     FOREIGN KEY (`Cliente_CodiceC`)
     REFERENCES `SoftwareHouse`.`Cliente` (`CodiceC`)
@@ -105,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Acquista` (
 )
 ENGINE = InnoDB;
 
-/*Creazione tabella Telefono_Fax*/
+/*Creazione tabella telefono/fax*/
 CREATE TABLE IF NOT EXISTS `SoftwareHouse`.`Telefono_Fax` (
   `Numero` CHAR(14) NOT NULL,
   `Tipo` CHAR(1) NOT NULL,
