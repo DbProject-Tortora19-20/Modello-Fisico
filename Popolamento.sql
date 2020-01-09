@@ -10,12 +10,12 @@ insert into cliente (CodiceC,Indirizzo) values (5,'Via Maglioni, 56, Avellino, 8
 insert into cliente (CodiceC,Indirizzo) values (6,'Via Diaz, 90, Salerno, 84121, (SA)');
 
 -- ----------------------------------------------------
--- Inserimento del 'personale' all'interno del database
+-- Inserimento di 'operatore' all'interno del database
 -- ----------------------------------------------------
-insert into personale (CodiceP,Nome,Cognome,Data_nascita,CF,Ruolo) values (4,'Melchiorre','Ferrari','1902/07/22','FRRMCH03H30D969I','Progettista');
-insert into personale (CodiceP,Nome,Cognome,Data_nascita,CF,Ruolo) values (3,'Fabiano','Di Giovanni','1902/09/28','DGVFBN02P28L736K','Analista');
-insert into personale (CodiceP,Nome,Cognome,Data_nascita,CF,Ruolo) values (2,'Mia','Morandi','1904/07/22','MRNMIA04L62F205Z','Sviluppatore');
-insert into personale (CodiceP,Nome,Cognome,Data_nascita,CF,Ruolo) values (1,'Rossano','Moretto','1903/07/15','MRTRSN03L15D969I','Analista');
+insert into operatore (CodiceO,Nome,Cognome,Data_nascita,CF,Ruolo) values (4,'Melchiorre','Ferrari','1902/07/22','FRRMCH03H30D969I','Tecnico');
+insert into operatore (CodiceO,Nome,Cognome,Data_nascita,CF,Ruolo) values (3,'Fabiano','Di Giovanni','1902/09/28','DGVFBN02P28L736K','Tecnico');
+insert into operatore (CodiceO,Nome,Cognome,Data_nascita,CF,Ruolo) values (2,'Mia','Morandi','1904/07/22','MRNMIA04L62F205Z','Commerciale');
+insert into operatore (CodiceO,Nome,Cognome,Data_nascita,CF,Ruolo) values (1,'Rossano','Moretto','1903/07/15','MRTRSN03L15D969I','Commerciale');
 
 -- ---------------------------------------------------
 -- Inserimento dei 'software' all'interno del database
@@ -70,9 +70,9 @@ insert into attestato (Data_rilascio,Corso_Formativo_CodiceCF,Cliente_CodiceC) v
 -- -----------------------------------------------------
 -- Inserimento dei 'problemi' all'interno del database
 -- -----------------------------------------------------
-insert into problema (Descrizione,Numero,Software_CodiceS,Cliente_CodiceC) values ('Anomalie di backup',1,6,6);
-insert into problema (Descrizione,Numero,Software_CodiceS,Cliente_CodiceC) values ('Crash continuo',1,5,5);
-insert into problema (Descrizione,Numero,Software_CodiceS,Cliente_CodiceC) values ('Risolvere bug',2,6,6);
+insert into problema (Descrizione,Numero,Stato,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Anomalie di backup',1,true,6,6,4);
+insert into problema (Descrizione,Numero,Stato,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Crash continuo',1,false,5,5,3);
+insert into problema (Descrizione,Numero,Stato,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Risolvere bug',2,true,6,6,2);
 
 -- ---------------------------------------------------
 -- Inserimento dei 'privati' all'interno del database
@@ -95,16 +95,6 @@ insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) v
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (5,2,2);
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (3,4,4);
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (5,5,1);
-
--- -----------------------------------------------------------------
--- Inserimento dell'associazione 'lavora_su' all'interno del database
--- ------------------------------------------------------------------
-insert into lavora_su (Personale_CodiceP,Software_CodiceS) values (4,6);
-insert into lavora_su (Personale_CodiceP,Software_CodiceS) values (4,5);
-insert into lavora_su (Personale_CodiceP,Software_CodiceS) values (3,4);
-insert into lavora_su (Personale_CodiceP,Software_CodiceS) values (2,3);
-insert into lavora_su (Personale_CodiceP,Software_CodiceS) values (1,2);
-insert into lavora_su (Personale_CodiceP,Software_CodiceS) values (1,1);
 
 -- -----------------------------------------------------------------
 -- Inserimento dell'associazione 'acquista' all'interno del database
