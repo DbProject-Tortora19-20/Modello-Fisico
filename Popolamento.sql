@@ -1,4 +1,3 @@
-
 -- --------------------------------------------------
 -- Inserimento dei 'clienti' all'interno del database
 -- --------------------------------------------------
@@ -70,9 +69,9 @@ insert into attestato (Data_rilascio,Corso_Formativo_CodiceCF,Cliente_CodiceC) v
 -- -----------------------------------------------------
 -- Inserimento dei 'problemi' all'interno del database
 -- -----------------------------------------------------
-insert into problema (Descrizione,Numero,Stato,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Anomalie di backup',1,true,6,6,4);
-insert into problema (Descrizione,Numero,Stato,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Crash continuo',1,false,5,5,3);
-insert into problema (Descrizione,Numero,Stato,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Risolvere bug',2,true,6,6,2);
+insert into problema (Descrizione,Numero,Risolto,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Anomalie di backup',1,true,6,6,4);
+insert into problema (Descrizione,Numero,Risolto,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Crash continuo',1,false,5,5,3);
+insert into problema (Descrizione,Numero,Risolto,Software_CodiceS,Cliente_CodiceC,Operatore_CodiceO) values ('Risolvere bug',2,true,6,6,2);
 
 -- ---------------------------------------------------
 -- Inserimento dei 'privati' all'interno del database
