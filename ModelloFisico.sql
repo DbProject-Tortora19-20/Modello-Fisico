@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Software (
   CodiceS INT UNSIGNED NOT NULL AUTO_INCREMENT,
   Nome VARCHAR(30) NOT NULL,
   Tipo VARCHAR(20) NOT NULL,
-  Prezzo FLOAT NOT NULL,
+  Prezzo FLOAT UNSIGNED NOT NULL,
   Caratteristica TINYTEXT NOT NULL,
   Licenza VARCHAR(30) NOT NULL,
   Versione VARCHAR(8) NOT NULL,
@@ -54,7 +54,7 @@ ENGINE = InnoDB;
 /*Creazione tabella Problema*/
 CREATE TABLE IF NOT EXISTS SoftwareHouse.Problema (
   Descrizione TINYTEXT NOT NULL,
-  Numero INT NOT NULL AUTO_INCREMENT,
+  Numero INT  UNSIGNED NOT NULL AUTO_INCREMENT,
   Risolto BOOLEAN NOT NULL,
   Software_CodiceS INT UNSIGNED NOT NULL,
   Cliente_CodiceC INT UNSIGNED NOT NULL,
@@ -76,9 +76,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS SoftwareHouse.Corso_Formativo (
   CodiceCF INT UNSIGNED NOT NULL AUTO_INCREMENT,
   Descrizione TINYTEXT NOT NULL,
-  Durata_in_ore TINYINT NOT NULL,
+  Durata_in_ore TINYINT UNSIGNED NOT NULL,
   Data_inizio DATE NOT NULL,
-  Numero_esami TINYINT NOT NULL,
+  Numero_esami TINYINT  UNSIGNED NOT NULL,
   PRIMARY KEY (CodiceCF)
 )
 ENGINE = InnoDB;
@@ -153,7 +153,7 @@ ENGINE = InnoDB;
 
 /*Creazione tabella Segue*/
 CREATE TABLE IF NOT EXISTS SoftwareHouse.Segue (
-  Numero_esami_dati INT NOT NULL,
+  Numero_esami_dati INT UNSIGNED NOT NULL,
   Cliente_CodiceC INT UNSIGNED NOT NULL,
   Corso_Formativo_CodiceCF INT UNSIGNED NOT NULL,
   PRIMARY KEY (Cliente_CodiceC, Corso_Formativo_CodiceCF),
