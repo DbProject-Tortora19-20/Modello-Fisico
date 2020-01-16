@@ -7,7 +7,7 @@ insert into cliente (CodiceC,Indirizzo,Email) values (2,'Via Roma, 16, Ariano Ir
 insert into cliente (CodiceC,Indirizzo,Email) values (3,'Via Carpineto, 89, Roma, 00127, (RM)','albaborghi@gmail.com');
 insert into cliente (CodiceC,Indirizzo,Email) values (4,'Via Fogliani, 26, Milano, 20996, (MI)','tecnologies@alice.it');
 insert into cliente (CodiceC,Indirizzo,Email) values (5,'Via Maglioni, 56, Avellino, 83100, (AV)','computer@gmail.com');
-insert into cliente (CodiceC,Indirizzo,Email) values (6,'Via Diaz, 90, Salerno, 84121, (SA)','pcandphones@libero.it');
+insert into cliente (CodiceC,Indirizzo,Email) values (6,'Via Diaz, 90, Salerno, 84121, (SA)','pcandphone@libero.it');
 
 -- ----------------------------------------------------
 -- Inserimento di 'operatore' all'interno del database
