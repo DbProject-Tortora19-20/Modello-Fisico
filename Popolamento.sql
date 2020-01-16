@@ -1,12 +1,13 @@
+
 -- --------------------------------------------------
 -- Inserimento dei 'clienti' all'interno del database
 -- --------------------------------------------------
-insert into cliente (CodiceC,Indirizzo) values (1,'Via Romagna, 12, Milano, 20999, (MI)');
-insert into cliente (CodiceC,Indirizzo) values (2,'Via Roma, 16, Ariano Irpino, 83031, (AV)');
-insert into cliente (CodiceC,Indirizzo) values (3,'Via Carpineto, 89, Roma, 00127, (RM)');
-insert into cliente (CodiceC,Indirizzo) values (4,'Via Fogliani, 26, Milano, 20996, (MI)');
-insert into cliente (CodiceC,Indirizzo) values (5,'Via Maglioni, 56, Avellino, 83100, (AV)');
-insert into cliente (CodiceC,Indirizzo) values (6,'Via Diaz, 90, Salerno, 84121, (SA)');
+insert into cliente (CodiceC,Indirizzo,Email) values (1,'Via Romagna, 12, Milano, 20999, (MI)','danielebandini@gmail.com');
+insert into cliente (CodiceC,Indirizzo,Email) values (2,'Via Roma, 16, Ariano Irpino, 83031, (AV)','candidobianchi@libero.it');
+insert into cliente (CodiceC,Indirizzo,Email) values (3,'Via Carpineto, 89, Roma, 00127, (RM)','albaborghi@gmail.com');
+insert into cliente (CodiceC,Indirizzo,Email) values (4,'Via Fogliani, 26, Milano, 20996, (MI)','tecnologies@alice.it');
+insert into cliente (CodiceC,Indirizzo,Email) values (5,'Via Maglioni, 56, Avellino, 83100, (AV)','computer@gmail.com');
+insert into cliente (CodiceC,Indirizzo,Email) values (6,'Via Diaz, 90, Salerno, 84121, (SA)','pcandphones@libero.it');
 
 -- ----------------------------------------------------
 -- Inserimento di 'operatore' all'interno del database
@@ -94,6 +95,7 @@ insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) v
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (5,2,2);
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (3,4,4);
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (5,5,1);
+insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (5,6,2);
 
 -- -----------------------------------------------------------------
 -- Inserimento dell'associazione 'acquista' all'interno del database
