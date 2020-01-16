@@ -6,6 +6,7 @@ USE SoftwareHouse ;
 CREATE TABLE IF NOT EXISTS SoftwareHouse.Cliente (
   CodiceC INT UNSIGNED NOT NULL AUTO_INCREMENT,
   Indirizzo VARCHAR(100) NOT NULL,
+  Email VARCHAR(50) NOT NULL,
   PRIMARY KEY (CodiceC)
 )
 ENGINE = InnoDB;
