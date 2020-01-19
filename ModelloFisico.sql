@@ -1,4 +1,4 @@
-*Creazione database*/
+/* Creazione database*/
 CREATE SCHEMA IF NOT EXISTS SoftwareHouse;
 USE SoftwareHouse ;
 
