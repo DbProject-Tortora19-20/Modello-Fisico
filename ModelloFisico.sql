@@ -1,4 +1,4 @@
-/*Creazione database*/
+*Creazione database*/
 CREATE SCHEMA IF NOT EXISTS SoftwareHouse;
 USE SoftwareHouse ;
 
@@ -18,9 +18,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Operatore (
   Cognome VARCHAR(15) NOT NULL,
   Data_nascita DATE NOT NULL,
   CF CHAR(16) NOT NULL,
-  Ruolo VARCHAR(13) NOT NULL,
-  PRIMARY KEY (CodiceO),
-  CHECK(Ruolo='Tecnico' or Ruolo='Commerciale')
+  PRIMARY KEY (CodiceO)
 )
 ENGINE = InnoDB;
 
