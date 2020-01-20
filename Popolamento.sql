@@ -147,7 +147,7 @@ insert into problema (Descrizione,Numero,Risolto,Software_CodiceS,Cliente_Codice
 -- --------------------------------------------------------------
 -- Inserimento dell'associazione 'segue' all'interno del database
 -- --------------------------------------------------------------
-insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (8,1,2);
+insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (10,1,2);
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (5,2,2);
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (3,3,2);
 insert into segue (Numero_esami_dati,Cliente_CodiceC,Corso_Formativo_CodiceCF) values (5,4,2);
