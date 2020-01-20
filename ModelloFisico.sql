@@ -54,7 +54,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS SoftwareHouse.Problema (
   Descrizione TINYTEXT NOT NULL,
   Numero INT  UNSIGNED NOT NULL AUTO_INCREMENT,
-  Risolto BOOLEAN NOT NULL,
+  Risolto BOOLEAN DEFAULT false,
   Software_CodiceS INT UNSIGNED NOT NULL,
   Cliente_CodiceC INT UNSIGNED NOT NULL,
   Operatore_CodiceO INT UNSIGNED NOT NULL,
