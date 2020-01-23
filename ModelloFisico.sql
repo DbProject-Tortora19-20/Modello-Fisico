@@ -1,9 +1,10 @@
 /* Creazione database*/
-CREATE SCHEMA IF NOT EXISTS SoftwareHouse;
+DROP SCHEMA IF EXISTS SoftwareHouse;
+CREATE SCHEMA SoftwareHouse;
 USE SoftwareHouse ;
 
 /*Creazione tabella Cliente*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Cliente (
+CREATE TABLE SoftwareHouse.Cliente (
   CodiceC INT UNSIGNED NOT NULL AUTO_INCREMENT,
   Indirizzo VARCHAR(100) NOT NULL,
   Email VARCHAR(50) NOT NULL,
@@ -12,7 +13,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Cliente (
 ENGINE = InnoDB;
 
 /*Creazione tabella Operatore*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Operatore (
+CREATE TABLE SoftwareHouse.Operatore (
   CodiceO INT UNSIGNED NOT NULL AUTO_INCREMENT,
   Nome VARCHAR(15) NOT NULL,
   Cognome VARCHAR(15) NOT NULL,
@@ -23,7 +24,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Operatore (
 ENGINE = InnoDB;
 
 /*Creazione tabella Software*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Software (
+CREATE TABLE SoftwareHouse.Software (
   CodiceS INT UNSIGNED NOT NULL AUTO_INCREMENT,
   Nome VARCHAR(30) NOT NULL,
   Tipo VARCHAR(20) NOT NULL,
@@ -40,7 +41,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Software (
 ENGINE = InnoDB;
 
 /*Creazione tabella Sistema_Operativo*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Sistema_Operativo (
+CREATE TABLE SoftwareHouse.Sistema_Operativo (
   Sistema VARCHAR(20) NOT NULL,
   Software_CodiceS INT UNSIGNED NOT NULL,
   PRIMARY KEY (Sistema, Software_CodiceS),
@@ -51,7 +52,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Sistema_Operativo (
 ENGINE = InnoDB;
 
 /*Creazione tabella Problema*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Problema (
+CREATE TABLE SoftwareHouse.Problema (
   Descrizione TINYTEXT NOT NULL,
   Numero INT  UNSIGNED NOT NULL AUTO_INCREMENT,
   Risolto BOOLEAN DEFAULT false,
@@ -72,7 +73,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Problema (
 ENGINE = InnoDB;
 
 /*Creazione tabella Corso_Formativo*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Corso_Formativo (
+CREATE TABLE SoftwareHouse.Corso_Formativo (
   CodiceCF INT UNSIGNED NOT NULL AUTO_INCREMENT,
   Descrizione TINYTEXT NOT NULL,
   Durata_in_ore TINYINT UNSIGNED NOT NULL,
@@ -97,7 +98,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Acquista (
 ENGINE = InnoDB;
 
 /*Creazione tabella telefono/fax*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Telefono_Fax(
+CREATE TABLE SoftwareHouse.Telefono_Fax(
   Numero CHAR(14) NOT NULL,
   Tipo CHAR(1) NOT NULL,
   Cliente_CodiceC INT UNSIGNED NOT NULL,
@@ -110,7 +111,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Telefono_Fax(
 ENGINE = InnoDB;
 
 /*Creazione tabella Attestato*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Attestato (
+CREATE TABLE SoftwareHouse.Attestato (
   Data_rilascio DATE NOT NULL,
   Corso_Formativo_CodiceCF INT UNSIGNED NOT NULL,
   Cliente_CodiceC INT UNSIGNED NOT NULL,
@@ -125,7 +126,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Attestato (
 ENGINE = InnoDB;
 
 /*Creazione tabella Azienda*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Azienda (
+CREATE TABLE SoftwareHouse.Azienda (
   Partita_iva CHAR(13) NOT NULL,
   Ragione_sociale VARCHAR(30) NOT NULL,
   Cliente_CodiceC INT UNSIGNED NOT NULL,
@@ -137,7 +138,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Azienda (
 ENGINE = InnoDB;
 
 /*Creazione tabella Privato*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Privato (
+CREATE TABLE SoftwareHouse.Privato (
   CF CHAR(16) NOT NULL,
   Nome VARCHAR(15) NOT NULL,
   Cognome VARCHAR(15) NOT NULL,
@@ -151,7 +152,7 @@ CREATE TABLE IF NOT EXISTS SoftwareHouse.Privato (
 ENGINE = InnoDB;
 
 /*Creazione tabella Segue*/
-CREATE TABLE IF NOT EXISTS SoftwareHouse.Segue (
+CREATE TABLE SoftwareHouse.Segue (
   Numero_esami_dati INT UNSIGNED NOT NULL,
   Cliente_CodiceC INT UNSIGNED NOT NULL,
   Corso_Formativo_CodiceCF INT UNSIGNED NOT NULL,
